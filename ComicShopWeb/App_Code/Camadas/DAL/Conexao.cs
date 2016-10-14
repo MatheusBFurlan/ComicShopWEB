@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locadora.Camadas.DAL
+namespace ComicShop.Camadas.DAL
 {
     public class Conexao
     {

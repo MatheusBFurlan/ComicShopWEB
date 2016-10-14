@@ -16,10 +16,7 @@
         .auto-style3 {
             height: 616px;
         }
-        .auto-style4 {
-            font-size: large;
-        }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -49,22 +46,6 @@
             <SortedDescendingHeaderStyle BackColor="#575357" />
         </asp:GridView>
         <br />
-        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" CssClass="auto-style4" DataKeyNames="id" DataSourceID="ObjectDataSource1" ForeColor="Black" GridLines="Vertical" Height="121px" Width="253px">
-            <AlternatingRowStyle BackColor="White" />
-            <EditRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-            <Fields>
-                <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
-                <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome" />
-                <asp:BoundField DataField="endereco" HeaderText="endereco" SortExpression="endereco" />
-                <asp:BoundField DataField="cidade" HeaderText="cidade" SortExpression="cidade" />
-                <asp:BoundField DataField="estado" HeaderText="estado" SortExpression="estado" />
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
-            </Fields>
-            <FooterStyle BackColor="#CCCC99" />
-            <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
-            <RowStyle BackColor="#F7F7DE" />
-        </asp:DetailsView>
         <br />
         <div>
         </div>

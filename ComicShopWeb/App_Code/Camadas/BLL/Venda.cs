@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locadora.Camadas.BLL
+namespace ComicShop.Camadas.BLL
 {
     public class Venda
     {

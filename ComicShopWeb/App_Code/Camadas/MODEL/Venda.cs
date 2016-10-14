@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locadora.Camadas.MODEL
+namespace ComicShop.Camadas.MODEL
 {
     public class Venda
     {

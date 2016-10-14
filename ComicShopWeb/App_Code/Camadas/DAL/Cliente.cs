@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locadora.Camadas.DAL
+namespace ComicShop.Camadas.DAL
 {
     public class Cliente
     {
@@ -144,7 +144,7 @@ namespace Locadora.Camadas.DAL
             SqlConnection conexao = new SqlConnection(strCon);
             string sql = "Update Clientes set nome=@nome, ";
             sql += " endereco=@endereco, cidade=@cidade, ";
-            sql += " estado=@estado, ";
+            sql += " estado=@estado ";
             sql += " where id=@id;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id", cliente.id); 
