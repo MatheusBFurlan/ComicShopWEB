@@ -12,6 +12,7 @@
         .auto-style2 {
             font-size: medium;
             margin-top: 0px;
+            margin-right: 5px;
         }
         .auto-style3 {
             text-align: center;
@@ -26,14 +27,14 @@
         <br />
         <br />
         <div class="auto-style3">
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" CssClass="auto-style2" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Vertical" Height="279px" PageSize="5" Width="725px">
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" CssClass="auto-style2" DataKeyNames="id" DataSourceID="ObjectDataSource1" ForeColor="Black" GridLines="Vertical" Height="278px" PageSize="5" Width="801px">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:BoundField DataField="id" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                    <asp:BoundField DataField="id" HeaderText="Id" SortExpression="id" />
                     <asp:BoundField DataField="titulo" HeaderText="Título" SortExpression="titulo" />
-                    <asp:BoundField DataField="valor" HeaderText="Valor" SortExpression="valor" />
-                    <asp:BoundField DataField="quantidade" HeaderText="Quantidade" SortExpression="quantidade" />
                     <asp:BoundField DataField="editora" HeaderText="Editora" SortExpression="editora" />
+                    <asp:BoundField DataField="quantidade" HeaderText="Quantidade" SortExpression="quantidade" />
+                    <asp:BoundField DataField="valor" HeaderText="Valor" SortExpression="valor" />
                     <asp:CommandField ButtonType="Button" ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
                 </Columns>
                 <FooterStyle BackColor="#CCCC99" />
@@ -48,24 +49,24 @@
             </asp:GridView>
         </div>
         <br />
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:COMICSHOPConnectionString %>" DeleteCommand="DELETE FROM [HQs] WHERE [id] = @id" InsertCommand="INSERT INTO [HQs] ([titulo], [valor], [quantidade], [editora]) VALUES (@titulo, @valor, @quantidade, @editora)" SelectCommand="SELECT * FROM [HQs]" UpdateCommand="UPDATE [HQs] SET [titulo] = @titulo, [valor] = @valor, [quantidade] = @quantidade, [editora] = @editora WHERE [id] = @id">
-            <DeleteParameters>
-                <asp:Parameter Name="id" Type="Int32" />
-            </DeleteParameters>
-            <InsertParameters>
-                <asp:Parameter Name="titulo" Type="String" />
-                <asp:Parameter Name="valor" Type="Double" />
-                <asp:Parameter Name="quantidade" Type="Int32" />
-                <asp:Parameter Name="editora" Type="String" />
-            </InsertParameters>
-            <UpdateParameters>
-                <asp:Parameter Name="titulo" Type="String" />
-                <asp:Parameter Name="valor" Type="Double" />
-                <asp:Parameter Name="quantidade" Type="Int32" />
-                <asp:Parameter Name="editora" Type="String" />
-                <asp:Parameter Name="id" Type="Int32" />
-            </UpdateParameters>
-        </asp:SqlDataSource>
+        <br />
+        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="id" DataSourceID="ObjectDataSource1" ForeColor="Black" GridLines="Vertical" Height="50px" Width="318px">
+            <AlternatingRowStyle BackColor="White" />
+            <EditRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+            <Fields>
+                <asp:BoundField DataField="titulo" HeaderText="titulo" SortExpression="titulo" />
+                <asp:BoundField DataField="editora" HeaderText="editora" SortExpression="editora" />
+                <asp:BoundField DataField="quantidade" HeaderText="quantidade" SortExpression="quantidade" />
+                <asp:BoundField DataField="valor" HeaderText="valor" SortExpression="valor" />
+                <asp:CommandField ShowInsertButton="True" />
+            </Fields>
+            <FooterStyle BackColor="#CCCC99" />
+            <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+            <RowStyle BackColor="#F7F7DE" />
+        </asp:DetailsView>
+        <br />
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ComicShop.Camadas.MODEL.HQ" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="Select" TypeName="ComicShop.Camadas.BLL.HQ" UpdateMethod="Update"></asp:ObjectDataSource>
         <br />
     
     </div>

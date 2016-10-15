@@ -16,7 +16,7 @@ namespace ComicShop.Camadas.DAL
         {
             List<MODEL.HQ> lstHQ = new List<MODEL.HQ>();
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Select * from HQs";
+            string sql = "Select * from HQs;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             conexao.Open();
             try
@@ -49,7 +49,7 @@ namespace ComicShop.Camadas.DAL
         {
             MODEL.HQ hq = new MODEL.HQ();
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Select * from HQs where id=@id";
+            string sql = "Select * from HQs where id=@id;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id", id);
             conexao.Open();

@@ -36,7 +36,6 @@ namespace ComicShop.Camadas.BLL
         public void Delete(MODEL.HQ HQ)
         {
             DAL.HQ dalHQ = new DAL.HQ();
-
             dalHQ.Delete(HQ);
         }
     }

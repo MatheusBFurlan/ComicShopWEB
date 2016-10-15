@@ -47,11 +47,24 @@
         </asp:GridView>
         <br />
         <br />
-        <div>
-        </div>
+        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="Black" GridLines="Vertical" Height="50px" Width="125px">
+            <AlternatingRowStyle BackColor="White" />
+            <EditRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+            <Fields>
+                <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
+                <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome" />
+                <asp:BoundField DataField="endereco" HeaderText="endereco" SortExpression="endereco" />
+                <asp:BoundField DataField="cidade" HeaderText="cidade" SortExpression="cidade" />
+                <asp:BoundField DataField="estado" HeaderText="estado" SortExpression="estado" />
+                <asp:CommandField ShowInsertButton="True" />
+            </Fields>
+            <FooterStyle BackColor="#CCCC99" />
+            <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+            <RowStyle BackColor="#F7F7DE" />
+        </asp:DetailsView>
         <br />
-        <br />
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Locadora.Camadas.MODEL.Cliente" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="Select" TypeName="Locadora.Camadas.BLL.Cliente" UpdateMethod="Update"></asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ComicShop.Camadas.MODEL.Cliente" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="Select" TypeName="ComicShop.Camadas.BLL.Cliente" UpdateMethod="Update"></asp:ObjectDataSource>
     
     </div>
     </form>
