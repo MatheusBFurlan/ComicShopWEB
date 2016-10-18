@@ -2,16 +2,25 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style type="text/css">
-    .auto-style14 {
-        width: 909px;
-        height: 635px;
-    }
-</style>
+        .auto-style14 {
+            text-align: center;
+            font-size: xx-large;
+        }
+        .auto-style15 {
+            text-decoration: underline;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <p>
         &nbsp;</p>
-    <p>
-    <img alt="" class="auto-style14" src="FundoHome.jpg" /></p>
+    <p class="auto-style14">
+        <strong>BemVindo!</strong></p>
+    <p class="auto-style14">
+        <strong>
+        <asp:Label ID="Label1" runat="server" CssClass="auto-style15" Text="Label"></asp:Label>
+        </strong></p>
+    <p class="auto-style14">
+        &nbsp;</p>
 </asp:Content>
 
